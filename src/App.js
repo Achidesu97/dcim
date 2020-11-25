@@ -41,7 +41,6 @@ class App extends Component{
 
         </div>
 
-        <Route path="/" component={Dashboard} />
    
 
         </BrowserRouter>
