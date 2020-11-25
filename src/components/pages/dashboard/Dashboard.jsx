@@ -5,7 +5,7 @@ import './Dashboard.css';
 class Dashboard extends Component{
     render(){
         
-        return <p>Cek</p>
+        return <p>Perubahan</p>
     }
 }
 

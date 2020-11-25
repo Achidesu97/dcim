@@ -1,16 +1,15 @@
 import React,{Component,Fragment} from 'react';
 import './App.css';
-import logo from './assets/logo.png'
-import Dashboard from './components/pages/dashboard/Dashboard'
-
+import logo from './assets/logo.png';
+import Dashboard from './components/pages/dashboard/Dashboard';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 class App extends Component{  
 
   render(){
 
     return (
-
-      <Fragment>
+      <BrowserRouter>
         <div className="grid-container">
 
           <header className="header">
@@ -41,7 +40,12 @@ class App extends Component{
           </footer>
 
         </div>
-      </Fragment>
+
+        <Route path="/" component={Dashboard} />
+   
+
+        </BrowserRouter>
+
     )
     
   }
