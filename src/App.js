@@ -1,7 +1,7 @@
 import React,{Component,Fragment} from 'react';
 import './App.css';
 import logo from './assets/logo.png';
-import Dashboard from './components/pages/dashboard/Dashboard';
+import Dashboard from './components/pages/home/Home';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 class App extends Component{  

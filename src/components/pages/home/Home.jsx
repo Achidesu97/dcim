@@ -1,5 +1,5 @@
 import React,{Component,Fragment} from 'react'
-import './Dashboard.css';
+import './Home.css';
 
 
 class Dashboard extends Component{
