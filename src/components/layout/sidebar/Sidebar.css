@@ -1,0 +1,36 @@
+.sidebar {
+      grid-area: sidenav;
+      background-color: #202020;
+      display: flex;
+      flex-direction: column;
+      color: white;
+}
+
+.logo {
+      margin: 40px 0px 20px 22px;
+}
+
+img {
+      height: 60px;
+      width: 150px;
+}
+
+.sidenav-list {
+      display: flex;
+      flex-direction: column;
+      justify-items: start;
+      margin-top: 30px;
+}
+
+.nav-text {
+      list-style: none;
+      padding: 20px 0px 20px 20px;
+}
+.nav-text:hover {
+      background-color: black;
+}
+
+.nav-text a {
+      color: white;
+      text-decoration: none;
+}

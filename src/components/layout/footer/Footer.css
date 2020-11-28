@@ -1,13 +1,8 @@
-.header {
-      grid-area: header;
+.footer {
+      grid-area: footer;
       background-color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
-      border-bottom: black;
-}
-
-.search {
-      margin-left: 4px;
 }

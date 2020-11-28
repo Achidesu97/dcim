@@ -14,65 +14,10 @@
       height: 100vh;
 }
 
-.header {
-      grid-area: header;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      border-bottom: black;
-}
-
-.search {
-      margin-left: 4px;
-}
-
-.sidenav {
-      grid-area: sidenav;
-      background-color: #202020;
-      display: flex;
-      flex-direction: column;
-      color: white;
-}
-
-.logo {
-      margin: 20px;
-      margin-left: 22px;
-}
-
-img {
-      height: 60px;
-      width: 150px;
-}
-
-.sidenav-list {
-      padding: 0;
-      margin-top: 40px;
-      list-style: none;
-}
-
-.sidenav-item {
-      padding: 13px 20px 13px 40px;
-      border: solid white;
-}
-
 .main {
       grid-area: main;
       padding: 30px 60px;
       background-color: #f1f1f1;
       border-top: black solid;
       border-bottom: black solid;
-}
-
-
-
-
-.footer {
-      grid-area: footer;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
 }

@@ -1,49 +1,31 @@
 import React,{Component,Fragment} from 'react';
 import './App.css';
-import logo from './assets/logo.png';
-import Dashboard from './components/pages/home/Home';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import Home from './components/pages/home/Home';
+import CustomerList from './components/pages/customerList/CustomerList';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Header from './components/layout/header/Header';
+import Sidebar from './components/layout/sidebar/Sidebar';
+import Footer from './components/layout/footer/Footer';
 
 class App extends Component{  
 
   render(){
 
     return (
-      <BrowserRouter>
+      <Router>
         <div className="grid-container">
-
-          <header className="header">
-            <div className="search">Search...</div>
-            <div className="profile">Your photo</div>
-          </header>
-
-          <aside className="sidenav">
-            <div className="logo">
-                <img src={logo} alt=""></img>
-            </div>
-
-            <ul className="sidenav-list">
-                <li className="sidenav-item">Home</li>
-                <li className="sidenav-item">Customer List</li>
-                <li className="sidenav-item">Rack Assets</li>
-                <li className="sidenav-item">Cable Management</li>
-            </ul>
-          </aside>
-
+         <Header />
+         <Sidebar />
+          <Switch>
+            <Route path='/' exact component={Home}/>
+            <Route path='/customer_list' component={CustomerList}/>
+          </Switch>
           <main className="main">  
-          <Dashboard />
+          <Home />
           </main>
-
-          <footer className="footer">
-                  <div className="copyright">&copy; 2020 MTH</div>
-                  <div className="signature">Mochammad Rashid Tri Utama</div>
-          </footer>
-
+        <Footer/>
         </div>
-
-   
-
-        </BrowserRouter>
+        </Router>
 
     )
     
