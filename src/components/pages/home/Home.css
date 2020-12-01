@@ -2,190 +2,190 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,400;0,600;1,400;1,600&display=swap');
 
 .row-top {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 60px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
 }
 
 .page-name {
-    height: 130px;
-    width: 250px;
-    overflow: hidden;
+      height: 130px;
+      width: 250px;
+      overflow: hidden;
 }
 
 .page-name h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-    color: #242424;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 35px;
+      color: #242424;
 }
 
 .page-name span {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 200;
-    font-size: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 200;
+      font-size: 20px;
 }
 
 .table-log {
-    height: 100px;
-    width: 600px;
-    position: relative;
-    background-color: white;
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
+      height: 100px;
+      width: 600px;
+      position: relative;
+      background-color: white;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
 }
-
 
 .row {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px 0;
-}
-
-.fa-bolt {
-    color: white;
-}
-
-.fa-info-circle {
-    color: black;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0;
 }
 
 .count {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 10px;
+      display: flex;
+      flex-direction: row-reverse;
+      margin-bottom: 10px;
 }
 
 .count h3 {
-    color: white;
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 600;
-    font-size: 50px;
+      color: white;
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 600;
+      font-size: 50px;
 }
 
 .label {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 12px;
-    color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: 12px;
+      color: white;
 }
 
 .label-infrastructure {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 200;
-    font-style: italic;
-    font-size: 12px;
-    padding: 4px 10px 0;
-    display: flex;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 200;
+      font-style: italic;
+      font-size: 12px;
+      padding: 4px 10px 0;
+      display: flex;
 }
 
 .label-infrastructure .label {
-    color: black;
-    margin-left: 8px;
+      color: black;
+      margin-left: 8px;
 }
 
 .content-infrastructure {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 30px;
 }
 
 .infra {
-    display: flex;
-    border: 2px solid;
-    align-items: center;
+      display: flex;
+      border: 2px solid;
+      align-items: center;
 }
 
 .card-available {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    position: relative;
-    flex: 1;
-    height: 120px;
-    max-width: 75px;
-    margin-right: 10px;
-    background-color: #ff7b07;
-    border-radius: 20px;
-    box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
-    overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      position: relative;
+      flex: 1;
+      height: 120px;
+      max-width: 75px;
+      margin-right: 10px;
+      background-color: #ff7b07;
+      border-radius: 20px;
+      box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
+      overflow: hidden;
 }
 
 .card-available-2 {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 10px;
-    flex: 1;
-    margin-right: 50px;
-    max-width: 75px;
-    background-color: #ff4b07;
-    border-radius: 20px;
-    box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
-    overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 10px;
+      flex: 1;
+      margin-right: 50px;
+      max-width: 75px;
+      background-color: #ff4b07;
+      border-radius: 20px;
+      box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
+      overflow: hidden;
 }
 
 .card-infrastructure {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    max-width: 1020px;
-    flex: 4;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
-    overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      max-width: 1020px;
+      flex: 4;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
+      overflow: hidden;
 }
 
 .column-1 {
-    display: flex;
-    flex: 2;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-right: 20px;
+      display: flex;
+      flex: 2;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-right: 20px;
 }
 
 .column-2 {
-    display: flex;
-    flex: 1;
-    max-width: 280px;
-    flex-direction: column;
-    flex-wrap: wrap;
+      display: flex;
+      flex: 1;
+      max-width: 280px;
+      flex-direction: column;
+      flex-wrap: wrap;
 }
 
 .card-analytics {
-    position: relative;
-    background-color: white;
-    height: 290px;
-    max-width: 1000px;
-    border-radius: 15px;
-    box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
-    overflow: hidden;
-    margin: 0 20px 20px 0;
+      position: relative;
+      background-color: white;
+      height: 290px;
+      max-width: 1000px;
+      border-radius: 15px;
+      box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
+      overflow: hidden;
+      margin: 0 20px 20px 0;
 }
 
 .card-customer {
-    position: relative;
-    background-color: white;
-    border-radius: 15px;
-    height: 290px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
-    overflow: hidden;
+      position: relative;
+      background-color: #ffaa00;
+      border-radius: 15px;
+      height: 290px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
+      overflow: hidden;
 }
 
 .card-amphere {
-    position: relative;
-    background-color: white;
-    border-radius: 15px;
-    height: 190px;
-    box-shadow: 0 0 7px rgba(175, 175, 175, 0.9);
-    overflow: hidden;
+      position: relative;
+      border-radius: 15px;
+      height: 190px;
+      box-shadow: 0 0 10px rgba(175, 175, 175, 0.9);
+      overflow: hidden;
+}
+
+.card-top {
+      height: 60%;
+      background-color: #d91818;
+}
+
+.card-bottom {
+      height: 40%;
+      background-color: #484848;
 }

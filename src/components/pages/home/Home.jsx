@@ -7,6 +7,7 @@ class Home extends Component{
         
         return (
             <Fragment>
+
                     <div class="row-top">
                         <div class="page-name">
                             <h2>Data</h2>
@@ -21,7 +22,7 @@ class Home extends Component{
 
                     <div class="row">
                         <div class="card-available">
-                            <div class="icon-card">
+                            <div class="card-header">
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <div class="count">
@@ -35,7 +36,7 @@ class Home extends Component{
                         </div>
 
                         <div class="card-available-2">
-                                    <div class="icon-card">
+                                    <div class="card-header">
                                     </div>
                                     
                                     <div class="count">
@@ -50,13 +51,9 @@ class Home extends Component{
 
                         </div>
                             <div class="card-infrastructure">
-                                <div class="label-infrastructure">
-                                <div class="icon-card">
-                                </div>
-                                <div class="label">
+                                <div class="card-header">
                                     <h4>Infrastructure</h4>
                                 </div>
-                            </div>
 
                             <div class="content-infrastructure">
                                 <div class="infra">
@@ -91,23 +88,40 @@ class Home extends Component{
 
                         <div class="column-1">
                             <div class="card-analytics">
-                                chart js
+                                <div class="card-header">
+                                    <h4>Infrastructure</h4>
+                                </div>
                             </div>
                             <div class="card-analytics">
-                                chart js
+                                 <div class="card-header">
+                                    <h4>Infrastructure</h4>
+                                </div>                            
                             </div>
                         </div>
 
                         <div class="column-2">
                             <div class="card-customer">
-                                <div class="card-header"> customer
+                                <div class="card-header"> 
+                                customer
                                 </div>
                                 <div class="card-customer-content">
                                 chart
                                 </div>
                             </div>
+                            
                             <div class="card-amphere">
-                                chart amphere
+
+                                <div className="card-top">
+                                    <div class="card-header">
+                                         amphere
+                                    </div>
+                                </div>
+
+                                <div className="card-bottom">
+                                    <div class="card-header">
+                                         rack location
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
