@@ -1,13 +1,13 @@
-import React,{Component,Fragment} from 'react';
+import React,{ Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Header from './components/layout/header/Header';
-import Sidebar from './components/layout/sidebar/Sidebar';
-import Footer from './components/layout/footer/Footer';
-import Home from './components/pages/home/Home';
-import CustomerList from './components/pages/customerList/CustomerList';
-import rackAsset from './components/pages/rackAsset/rackAsset';
-import cableManagement from './components/pages/cableManagement/cableManagement';
+import Header from '../../templates/header/Header';
+import Sidebar from '../../templates/sidebar/Sidebar';
+import Footer from '../../templates/footer/Footer';
+import Home from '../Home/Home';
+import CustomerList from '../CustomerList/CustomerList';
+import rackAsset from '../RackAsset/rackAsset';
+import cableManagement from '../CableManagement/cableManagement';
 
 
 

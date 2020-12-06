@@ -1,6 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/img/logo/logo.png';
 import {Link} from 'react-router-dom';
 import {SidebarData} from './SidebarData';
 
