@@ -9,8 +9,6 @@ import CustomerList from '../CustomerList/CustomerList';
 import rackAsset from '../RackAsset/rackAsset';
 import cableManagement from '../CableManagement/cableManagement';
 
-
-
 class App extends Component{  
 
   render(){
