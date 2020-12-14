@@ -5,22 +5,20 @@ import firebase from '../../../config/firebase';
 
 class Register extends Component {
 
-    state ={
-        email:'',
-        password:''
+    state = {
+        email: '',
+        password: ''
     }
 
     handleChangeText = (e) => {
-        // console.log(e.target.id);
         this.setState({
             [e.target.id]: e.target.value
         })
     }
 
     handleRegisterSubmit = () => {
-        const {email,password} = this.setState;
-        console.log('data before send:',email, password);
-
+       const {email,password} = this.state;
+        console.log('data before send :', email, password);
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(res => {
           console.log('success:',res)
@@ -38,7 +36,7 @@ class Register extends Component {
                 <div className="auth-card">
                 <p className="auth-title">Register</p>
                 <input className="input" id="email" placeholder="Email" type="text" onChange={this.handleChangeText}/>
-                <input className="input" password="password" placeholder="Password" type="password" onChange={this.handleChangeText}/>
+                <input className="input" id="password" placeholder="Password" type="password" onChange={this.handleChangeText}/>
                 <button className="btn" onClick={this.handleRegisterSubmit}>Register</button>
                 </div>
             </div>
