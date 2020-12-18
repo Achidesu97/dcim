@@ -2,6 +2,7 @@ import { Divider } from '@material-ui/core';
 import React, {Component} from 'react';
 import './register.css';
 import firebase from '../../../config/firebase';
+import Button from '../../../components/atoms/Button'
 
 class Register extends Component {
 
@@ -37,7 +38,7 @@ class Register extends Component {
                 <p className="auth-title">Register</p>
                 <input className="input" id="email" placeholder="Email" type="text" onChange={this.handleChangeText}/>
                 <input className="input" id="password" placeholder="Password" type="password" onChange={this.handleChangeText}/>
-                <button className="btn" onClick={this.handleRegisterSubmit}>Register</button>
+                <Button onClick={this.handleRegisterSubmit} title="Register" />
                 </div>
             </div>
         )
