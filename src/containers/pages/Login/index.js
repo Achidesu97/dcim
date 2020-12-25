@@ -1,22 +1,49 @@
 import { Divider } from '@material-ui/core';
 import React, {Component} from 'react';
 import './login.css';
+import Button from '../../../components/atoms/Button';
 import { connect } from 'react-redux';
-import { actionUserName } from '../../../config/redux/action';
+import { loginUserAPI } from '../../../config/redux/action';
 
 class Login extends Component {
 
-    changeUser = () => {
-        this.props.changeUserName()
+    state = {
+        email: '',
+        password: '',
+    }
+
+    handleChangeText = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handleLoginSubmit = async () => {
+       const {email,password} = this.state;
+       const {history} = this.props;
+       const res = await this.props.loginAPI({email,password}).catch(err=> err);
+       
+       if (res === true){
+            console.log('login success')
+           this.setState({
+                email: '',
+                password: ''
+            })
+            history.push('/')
+       }else{
+           console.log('login failed')
+       }
     }
 
     render(){
         return(
-            <div>
-                <p>Login as a {this.props.userName}</p>
-                
-                <button onClick={this.changeUser} > Change User Name</button>
-                <button>Go to Dashboard</button>
+            <div className="auth-container">
+                <div className="auth-card">
+                <p className="auth-title">Login Page</p>
+                <input className="input" id="email" placeholder="Email" type="text" onChange={this.handleChangeText} value={this.state.email} />
+                <input className="input" id="password" placeholder="Password" type="password" onChange={this.handleChangeText} value={this.state.password}/>
+                <Button onClick={this.handleLoginSubmit} title="Login" loading={this.props.isLoading}/>
+                </div>
             </div>
         )
     }
@@ -25,12 +52,11 @@ class Login extends Component {
 
 
 const reduxState = (state) => ({
-    popupProps : state.popup,
-    userName : state.user
-})
+    isLoading: state.isLoading
+});
 
 const reduxDispatch = (dispatch) => ({
-    changeUserName : () => dispatch(actionUserName())
-}) 
+    loginAPI : (data) => dispatch(loginUserAPI(data))
+});
 
 export default connect(reduxState, reduxDispatch)(Login);

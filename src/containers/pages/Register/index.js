@@ -17,9 +17,15 @@ class Register extends Component {
         })
     }
 
-    handleRegisterSubmit = () => {
+    handleRegisterSubmit = async () => {
        const {email,password} = this.state;
-        this.props.registerAPI({email,password});
+        const res = await this.props.registerAPI({email,password}).catch(err => err);
+        if(res){
+            this.setState({
+                email: '',
+                password: ''
+            })
+        }
     }
 
     render(){
@@ -27,8 +33,8 @@ class Register extends Component {
             <div className="auth-container">
                 <div className="auth-card">
                 <p className="auth-title">Register</p>
-                <input className="input" id="email" placeholder="Email" type="text" onChange={this.handleChangeText}/>
-                <input className="input" id="password" placeholder="Password" type="password" onChange={this.handleChangeText}/>
+                <input className="input" id="email" placeholder="Email" type="text" onChange={this.handleChangeText} value={this.state.email} />
+                <input className="input" id="password" placeholder="Password" type="password" onChange={this.handleChangeText} value={this.state.password}/>
                 <Button onClick={this.handleRegisterSubmit} title="Register" loading={this.props.isLoading}/>
                 </div>
             </div>
