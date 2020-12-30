@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import firebase from './config/firebase';
 
 
-console.log("firebase =>",firebase);
+// console.log("firebase =>",firebase);
 
 
 

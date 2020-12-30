@@ -23,8 +23,8 @@ class Login extends Component {
        const {history} = this.props;
        const res = await this.props.loginAPI({email,password}).catch(err=> err);
        
-       if (res === true){
-            console.log('login success')
+       if (res){
+            console.log('login success', res)
            this.setState({
                 email: '',
                 password: ''

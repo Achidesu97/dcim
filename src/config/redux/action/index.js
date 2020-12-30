@@ -1,4 +1,4 @@
-import firebase from '../../firebase';
+import firebase, {database} from '../../firebase';
 
 export const actionUserName = () => {
     return {type:'CHANGE_USER', value:'Rashid Utama'};
@@ -40,12 +40,13 @@ export const loginUserAPI = (data) => (dispatch) => {
                 const dataUser = {
                         email : res.user.email,
                         uid : res.user.uid,
-                        emailVerified : res.user.emailVerified
+                        emailVerified : res.user.emailVerified,
+                        refreshToken : res.user.refreshToken
                 }
                     dispatch({type: 'CHANGE_LOADING', value:false})
                     dispatch({type: 'CHANGE_ISLOGIN', value:true})
                     dispatch({type: 'CHANGE_USER', value:dataUser})
-                    resolve(true)
+                    resolve(dataUser)
             }
         )
         .catch(function(error) {
@@ -60,4 +61,12 @@ export const loginUserAPI = (data) => (dispatch) => {
 
     })
 
+}
+
+export const addDataToAPI = (data) => (dispatch) => {
+    database().ref('notes' + data.userId).set({
+        title: data.title,
+        content: data.content,
+        date : data.date
+      });
 }

@@ -4,10 +4,10 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from '../../templates/header/Header';
 import Sidebar from '../../templates/sidebar/Sidebar';
 import Footer from '../../templates/footer/Footer';
-import Home from '../Home/Home';
-import CustomerList from '../CustomerList/CustomerList';
-import rackAsset from '../RackAsset/rackAsset';
-import cableManagement from '../CableManagement/cableManagement';
+import Home from '../Home';
+import CustomerList from '../CustomerList/';
+import RackAsset from '../RackAsset/';
+import CableManagement from '../CableManagement';
 import Register from '../../pages/Register'
 import Login from '../../pages/Login'
 import { Provider } from 'react-redux';
@@ -31,8 +31,8 @@ class App extends Component{
             <Route path='/register' exact component={Register}/>
             <Route path='/login' exact component={Login}/>
             <Route path='/customer_list' component={CustomerList}/>
-            <Route path='/rack_assets' component={rackAsset}/>
-            <Route path='/cable_management' component={cableManagement}/>
+            <Route path='/rack_assets' component={RackAsset}/>
+            <Route path='/cable_management' component={CableManagement}/>
           </Switch>
           </main>
         <Footer/>

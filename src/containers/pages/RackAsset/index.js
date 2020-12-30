@@ -1,9 +1,9 @@
 import React from 'react';
 
-function rackAsset(){
+function RackAsset(){
     return(
         <h1>RACK ASSETS</h1>
     )
 }
 
-export default rackAsset;
+export default RackAsset;
