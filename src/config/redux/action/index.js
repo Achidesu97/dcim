@@ -64,9 +64,17 @@ export const loginUserAPI = (data) => (dispatch) => {
 }
 
 export const addDataToAPI = (data) => (dispatch) => {
-    database().ref('notes' + data.userId).set({
+    database.ref('notes/' + data.userId).push({
         title: data.title,
         content: data.content,
         date : data.date
       });
+}
+
+export const getDataFromAPI = (userId) => (dispatch) => {
+    const urlNotes = database.ref('posts/' + userId);
+    urlNotes.on('value', (snapshot) =>{
+        // updateStarCount(postElement, data);
+        console.log('get data = ', snapshot.val())
+    });
 }

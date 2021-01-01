@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { addDataToAPI } from '../../../config/redux/action';
+import { addDataToAPI,getDataFromAPI } from '../../../config/redux/action';
 
 
 class CustomerList extends Component{
@@ -11,13 +11,23 @@ class CustomerList extends Component{
         date : ''
     }
 
+    componentDidMount(){
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        this.props.getNotes(userData.uid)
+    }
+
     handleSaveNotes = () => {
         const {title, content} = this.state;
+        const {saveNotes} = this.props;
+        const userData = JSON.parse(localStorage.getItem('userData'))
+
         const data = {
             title : title,
-            date : new Date(),
-            content : content
+            date : new Date().getTime(),
+            content : content,
+            userId : userData.uid
         }
+        saveNotes(data);
         console.log(data);
     }
 
@@ -57,11 +67,14 @@ class CustomerList extends Component{
     }
 }
 
-const reduxDispatch = (dispatch) => (
-    {
-        saveNotes : () => dispatch(addDataToAPI())
-    }
-)
+const reduxState = (state) => ({
+    userData : state.user
+})
+
+const reduxDispatch = (dispatch) => ({
+        saveNotes : (data) => dispatch(addDataToAPI(data)),
+        getNotes : (data) => dispatch(getDataFromAPI(data))
+})
     
 
-export default connect(null, reduxDispatch) (CustomerList);
+export default connect(reduxState, reduxDispatch) (CustomerList);

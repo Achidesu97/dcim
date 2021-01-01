@@ -1,4 +1,4 @@
-import React,{Component,Fragment} from 'react'
+import React,{Component,Fragment} from 'react';
 import './Home.css';
 
 
@@ -8,117 +8,117 @@ class Home extends Component{
         return (
             <Fragment>
 
-                    <div class="row-top">
-                        <div class="page-name">
+                    <div className="row-top">
+                        <div className="page-name">
                             <h2>Data</h2>
                             <h2>Center  #1</h2>
                             <hr/>
                             <span>Intiland Tower</span>
                         </div>
-                        <div class="table-log">
+                        <div className="table-log">
 
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="card-available">
-                            <div class="card-header">
-                                <i class="fas fa-bolt"></i>
+                    <div className="row">
+                        <div className="card-available">
+                            <div className="card-header">
+                                <i className="fas fa-bolt"></i>
                             </div>
-                            <div class="count">
+                            <div className="count">
                                 <h3>4</h3>
                             </div>
-                            <div class="label">
+                            <div className="label">
                                 <span>Full Rack</span>
                                 <br/>
                                 <span>Available</span>
                             </div>
                         </div>
 
-                        <div class="card-available-2">
-                                    <div class="card-header">
+                        <div className="card-available-2">
+                                    <div className="card-header">
                                     </div>
                                     
-                                    <div class="count">
+                                    <div className="count">
                                         <h3>8</h3>
                                     </div>
                                     
-                                    <div class="label">
+                                    <div className="label">
                                         <span>Legran</span>
                                         <br/>
                                         <span>Available</span>
                                     </div>
 
                         </div>
-                            <div class="card-infrastructure">
-                                <div class="card-header">
+                            <div className="card-infrastructure">
+                                <div className="card-header">
                                     <h4>Infrastructure</h4>
                                 </div>
 
-                            <div class="content-infrastructure">
-                                <div class="infra">
-                                    <div class="count">9</div>
-                                    <div class="icon-card"></div>
+                            <div className="content-infrastructure">
+                                <div className="infra">
+                                    <div className="count">9</div>
+                                    <div className="icon-card"></div>
                                 </div>
-                                <div class="infra">
-                                    <div class="count">4</div>
-                                    <div class="icon-card"></div>
+                                <div className="infra">
+                                    <div className="count">4</div>
+                                    <div className="icon-card"></div>
                                 </div>
-                                <div class="infra">
-                                    <div class="count">5</div>
-                                    <div class="icon-card"></div>
+                                <div className="infra">
+                                    <div className="count">5</div>
+                                    <div className="icon-card"></div>
                                 </div>
-                                <div class="infra">
-                                    <div class="count">10</div>
-                                    <div class="icon-card"></div>
+                                <div className="infra">
+                                    <div className="count">10</div>
+                                    <div className="icon-card"></div>
                                 </div>
-                                <div class="infra">
-                                    <div class="count">8</div>
-                                    <div class="icon-card"></div>
+                                <div className="infra">
+                                    <div className="count">8</div>
+                                    <div className="icon-card"></div>
                                 </div>
-                                <div class="infra">
-                                    <div class="count">14</div>
-                                    <div class="icon-card"></div>
+                                <div className="infra">
+                                    <div className="count">14</div>
+                                    <div className="icon-card"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div className="row">
 
-                        <div class="column-1">
-                            <div class="card-analytics">
-                                <div class="card-header">
+                        <div className="column-1">
+                            <div className="card-analytics">
+                                <div className="card-header">
                                     <h4>Infrastructure</h4>
                                 </div>
                             </div>
-                            <div class="card-analytics">
-                                 <div class="card-header">
+                            <div className="card-analytics">
+                                 <div className="card-header">
                                     <h4>Infrastructure</h4>
                                 </div>                            
                             </div>
                         </div>
 
-                        <div class="column-2">
-                            <div class="card-customer">
-                                <div class="card-header"> 
+                        <div className="column-2">
+                            <div className="card-customer">
+                                <div className="card-header"> 
                                 customer
                                 </div>
-                                <div class="card-customer-content">
+                                <div className="card-customer-content">
                                 chart
                                 </div>
                             </div>
                             
-                            <div class="card-amphere">
+                            <div className="card-amphere">
 
                                 <div className="card-top">
-                                    <div class="card-header">
+                                    <div className="card-header">
                                          amphere
                                     </div>
                                 </div>
 
                                 <div className="card-bottom">
-                                    <div class="card-header">
+                                    <div className="card-header">
                                          rack location
                                     </div>
                                 </div>
