@@ -72,9 +72,41 @@ export const addDataToAPI = (data) => (dispatch) => {
 }
 
 export const getDataFromAPI = (userId) => (dispatch) => {
-    const urlNotes = database.ref('posts/' + userId);
-    urlNotes.on('value', (snapshot) =>{
-        // updateStarCount(postElement, data);
-        console.log('get data = ', snapshot.val())
-    });
+    const urlNotes = database.ref('notes/' + userId);
+
+    return new Promise((resolve,reject)=>{
+
+        urlNotes.on('value', (snapshot) =>{
+            console.log('get data = ', snapshot.val())
+            const data = [];
+            Object.keys(snapshot.val()).map(key=>{
+                data.push({
+                    id:key,
+                    data:snapshot.val()[key]
+                })
+            })
+            dispatch({type: 'SET_NOTES', value: data})
+            resolve(snapshot.val())
+        });
+    })
+}
+
+
+export const updateDataAPI = (data) => (dispatch) => {
+    const urlNotes = database.ref(`notes/${data.userId}/${data.noteId}`);
+
+    return new Promise((resolve,reject)=>{
+
+        urlNotes.set({
+            title: data.title,
+            content: data.content,
+            date : data.date
+          },(err)=>{
+            if(err){
+                reject(false)
+            }else{
+                resolve(true)
+            }
+        });
+    })
 }

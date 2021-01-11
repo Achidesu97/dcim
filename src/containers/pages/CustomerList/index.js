@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addDataToAPI,getDataFromAPI } from '../../../config/redux/action';
+import { addDataToAPI,getDataFromAPI, updateDataAPI } from '../../../config/redux/action';
 
 
 class CustomerList extends Component{
@@ -8,7 +9,9 @@ class CustomerList extends Component{
     state = {
         title : '',
         content : '',
-        date : ''
+        date : '',
+        textButton:'SIMPAN',
+        noteId : ''
     }
 
     componentDidMount(){
@@ -17,9 +20,9 @@ class CustomerList extends Component{
     }
 
     handleSaveNotes = () => {
-        const {title, content} = this.state;
-        const {saveNotes} = this.props;
-        const userData = JSON.parse(localStorage.getItem('userData'))
+        const {title, content, textButton, noteId} = this.state;
+        const {saveNotes,updateNotes} = this.props;
+        const userData = JSON.parse(localStorage.getItem('userData'));
 
         const data = {
             title : title,
@@ -27,9 +30,16 @@ class CustomerList extends Component{
             content : content,
             userId : userData.uid
         }
-        saveNotes(data);
+
+        if(textButton === 'SIMPAN'){
+            saveNotes(data)
+        }else {
+            data.noteId = noteId;
+            updateNotes(data)
+        }
         console.log(data);
     }
+
 
     onInputChange = (e,type) => {
         this.setState({
@@ -37,9 +47,30 @@ class CustomerList extends Component{
         })
     }
 
+    updateNotes = (note) => {
+        console.log(note)
+        this.setState({
+            title: note.data.title,
+            content: note.data.content,
+            textButton:'UPDATE',
+            noteId : note.id
+        })
+    }
+
+    cancelUpdate = () => {
+        this.setState({
+            title: '',
+            content: '',
+            textButton:'SIMPAN'
+        })
+    }
+
     render(){
 
-        const {title, content, date} = this.state;
+        const {title, content, date,textButton} = this.state;
+        const {notes} = this.props;
+        const {updateNotes,cancelUpdate} = this;
+        console.log('notes :', notes)
 
         return(
             <>
@@ -49,18 +80,39 @@ class CustomerList extends Component{
             <br/>
             <div className="container">
             <input type="text" className="title-name" value={title} onChange={(e)=>this.onInputChange(e,'title')} />
-            <br/>
             <textarea name="" id="" cols="30" rows="10" className="input-content" value={content} onChange={(e)=>this.onInputChange(e,'content')}> </textarea>
-            <br/> 
-            <button className="save-button" onClick={this.handleSaveNotes}>Simpan</button>
+            {
+                textButton === 'UPDATE' ? (
+                    <button className="save-button" onClick={cancelUpdate}>Cancel</button> 
+                ): null
+            }
+            <button className="save-button" onClick={this.handleSaveNotes}>{textButton}</button> 
             <hr/>
             <br/>
             <br/>
-            <p className="title">Title</p>
-            <br/>
-            <p className="date">30 Desember 2020</p>
-            <br/>
-            <p className="content">Content Notes</p>
+            {
+                notes.length > 0 ? (
+                    <Fragment>
+                        {
+                            notes.map(note=>{
+                                return (
+                                    <div key={note.id} onClick={()=>updateNotes(note)}>
+                                        <p className="title">{note.data.title}</p>
+                                        <br/>
+                                        <p className="date">{note.data.date}</p>
+                                        <br/>
+                                        <p className="content">{note.data.content}</p>
+                                    </div>
+                                )
+
+                            })
+
+                        }
+
+                    </Fragment>
+                ) : null 
+
+            }
             </div>
             </>
         )
@@ -68,12 +120,14 @@ class CustomerList extends Component{
 }
 
 const reduxState = (state) => ({
-    userData : state.user
+    userData : state.user,
+    notes : state.notes
 })
 
 const reduxDispatch = (dispatch) => ({
         saveNotes : (data) => dispatch(addDataToAPI(data)),
-        getNotes : (data) => dispatch(getDataFromAPI(data))
+        getNotes : (data) => dispatch(getDataFromAPI(data)),
+        updateNotes : (data) => dispatch(updateDataAPI(data))
 })
     
 
