@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import './App.css';
+// import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from '../../templates/header/Header';
 import Sidebar from '../../templates/sidebar/Sidebar';
@@ -12,20 +12,27 @@ import Register from '../../pages/Register'
 import Login from '../../pages/Login'
 import { Provider } from 'react-redux';
 import {store} from '../../../config/redux'
+import { CssBaseline, makeStyles } from '@material-ui/core';
 
-class App extends Component{  
+const useStyles = makeStyles({
+  appMain:{
+    paddingLeft: '250px',
+    width:'100%'
+  }
+})
 
 
-  render(){
+function App (){  
+const classes = useStyles();
 
     return (
       <Provider store={store}>
 
       <Router>
-        <div className="grid-container">
+        {/* <div className="grid-container"> */}
+        <Sidebar />
+         <main className={classes.appMain}>  
          <Header />
-         <Sidebar />
-         <main className="main">  
           <Switch>
             <Route path='/' exact component={Home}/>
             <Route path='/register' exact component={Register}/>
@@ -34,16 +41,16 @@ class App extends Component{
             <Route path='/rack_assets' component={RackAsset}/>
             <Route path='/cable_management' component={CableManagement}/>
           </Switch>
+          <Footer/>
           </main>
-        <Footer/>
-        </div>
+          <CssBaseline/>
+        {/* </div> */}
         </Router>
 
       </Provider>
 
     )
     
-  }
 
 }
 

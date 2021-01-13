@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addDataToAPI,getDataFromAPI, updateDataAPI } from '../../../config/redux/action';
+import { addDataToAPI,getDataFromAPI, updateDataAPI, deleteDataAPI } from '../../../config/redux/action';
 
 
 class CustomerList extends Component{
@@ -65,11 +65,22 @@ class CustomerList extends Component{
         })
     }
 
+    deleteNote = (e, note) => {
+        e.stopPropagation();
+        const {deleteNote} = this.props
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        const data = {
+            userId : userData.uid,
+            noteId : note.id
+        }
+        deleteNote(data)
+    }
+
     render(){
 
         const {title, content, date,textButton} = this.state;
         const {notes} = this.props;
-        const {updateNotes,cancelUpdate} = this;
+        const {updateNotes,cancelUpdate, deleteNote} = this;
         console.log('notes :', notes)
 
         return(
@@ -102,6 +113,7 @@ class CustomerList extends Component{
                                         <p className="date">{note.data.date}</p>
                                         <br/>
                                         <p className="content">{note.data.content}</p>
+                                        <button className="delete-btn" onClick={(e)=>deleteNote(e, note)}>Delete</button>
                                     </div>
                                 )
 
@@ -127,7 +139,8 @@ const reduxState = (state) => ({
 const reduxDispatch = (dispatch) => ({
         saveNotes : (data) => dispatch(addDataToAPI(data)),
         getNotes : (data) => dispatch(getDataFromAPI(data)),
-        updateNotes : (data) => dispatch(updateDataAPI(data))
+        updateNotes : (data) => dispatch(updateDataAPI(data)),
+        deleteNote : (data) => dispatch(deleteDataAPI(data))
 })
     
 

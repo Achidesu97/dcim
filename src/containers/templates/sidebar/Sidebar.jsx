@@ -3,11 +3,25 @@ import './Sidebar.css';
 import logo from '../../../assets/img/logo/logo.png';
 import {Link} from 'react-router-dom';
 import {SidebarData} from './SidebarData';
+import { withStyles } from "@material-ui/core";
+// import { style } from './SidebarStyle';
 
-function Sidebar(){
-       
+const style = {
+    sidebar:{
+        display:'flex',
+        flexDirection:'column',
+        position:'absolute',
+        left:'0px',
+        width:'250px',
+        height: '100%',
+        backgroundColor:'#202020'
+    }
+}
+
+const Sidebar = (props) => {
+    const { classes } = props;
     return (
-            <aside className="sidebar">
+            <aside className={classes.sidebar}>
 
                 <div className="logo">
                     <Link to="/"> 
@@ -31,4 +45,4 @@ function Sidebar(){
     
 }
 
-export default Sidebar;
+export default withStyles(style) (Sidebar);

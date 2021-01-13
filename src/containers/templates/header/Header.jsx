@@ -1,18 +1,52 @@
-import React,{Component} from 'react';
-import './Header.css';
+import React from 'react';
+import { AppBar, Toolbar, Grid, InputBase,IconButton,makeStyles, Badge } from '@material-ui/core';
+import NotificationsNone from '@material-ui/icons/NotificationsNone';
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import SearchIcon from '@material-ui/icons/Search';
 
-
-class Header extends Component{
-    render(){
-        return(
-
-            <header className="header">
-            <div className="search">Search...</div>
-            <div className="profile">Your photo</div>
-            </header>
-
-        )
+const useStyles = makeStyles({
+    root: {
+        backgroundColor: '#fff'
+    },
+    searchInput:{
+        opacity:'0.6',
+        padding:'0px 8px',
+        fontSize: '0.8 rem',
+        '&:hover': {
+            backgroundColor:'#f2f2f2'
+        }
     }
+})
+
+export default function Header(){
+    const classes = useStyles();
+        return (
+            <AppBar position="static" className={classes.root}>
+                <Toolbar>
+                    <Grid container alignItems="center">
+                        <Grid item>
+                            <InputBase placeholder="Search" className={classes.searchInput} startAdornment={<SearchIcon fontSize="small"/>}/>
+                        </Grid>
+                        <Grid item sm></Grid>
+                        <Grid item>
+                            <IconButton>
+                                <Badge badgeContent={4} color="secondary">
+                                    <NotificationsNone fontSize="small"/>
+                                </Badge>
+                            </IconButton>
+                            <IconButton>
+                                <Badge badgeContent={2} color="primary">
+                                    <ChatBubbleOutlineIcon fontSize="small"/>
+                                </Badge>
+                            </IconButton>
+                            <IconButton>
+                                <PowerSettingsNewIcon fontSize="small"/>
+                            </IconButton>
+                        </Grid>
+                    </Grid>
+                </Toolbar>
+            </AppBar>
+        )
 }
 
-export default Header;
